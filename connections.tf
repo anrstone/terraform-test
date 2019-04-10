@@ -9,10 +9,10 @@ provider "aws" {
 }
 
 provider "azurerm" {
-  subscription_id = "0"
-  client_id = "1"
-  client_secret = "2"
-  tennant_id = "3"
+  subscription_id = "${var.azu_subscription_id}"
+  client_id = "${var.azu_client_id}"
+  client_secret = "${var.azu_client_secret}"
+  tenant_id = "${var.azu_tenant_id}"
 }
 
 provider "oci" {
@@ -22,9 +22,3 @@ provider "oci" {
   private_key_path = "${var.oci_private_key_path}"
   region = "${var.oci_region}"
 }
-
-variable oci_tenancy_ocid {}
-variable oci_user_ocid {}
-variable oci_fingerprint {}
-variable oci_private_key_path {}
-variable oci_region {}
