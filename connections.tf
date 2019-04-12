@@ -1,7 +1,7 @@
 provider "google" {
   credentials = "${file("../account.json")}"
-  project = "even-boulder-236416"
-  region = "europe-west1"
+  project     = "even-boulder-236416"
+  region      = "europe-west1"
 }
 
 provider "aws" {
@@ -10,9 +10,9 @@ provider "aws" {
 
 provider "azurerm" {
   subscription_id = "${var.azu_subscription_id}"
-  client_id = "${var.azu_client_id}"
-  client_secret = "${var.azu_client_secret}"
-  tenant_id = "${var.azu_tenant_id}"
+  client_id       = "${var.azu_client_id}"
+  client_secret   = "${var.azu_client_secret}"
+  tenant_id       = "${var.azu_tenant_id}"
 }
 
 # provider "oci" {
