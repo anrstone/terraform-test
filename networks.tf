@@ -39,18 +39,18 @@ resource "azurerm_virtual_network" "blue_virtual_network" {
   }
 }
 
-resource "oci_core_virtual_network" "ExampleVCN" {
-  cidr_block     = "10.1.0.0/16"
-  compartment_id = "${var.oci_compartment_ocid}"
-  display_name   = "TFExampleVCN"
-  dns_label      = "tfexamplevcn"
-}
+# resource "oci_core_virtual_network" "ExampleVCN" {
+#   cidr_block     = "10.1.0.0/16"
+#   compartment_id = "${var.oci_compartment_ocid}"
+#   display_name   = "TFExampleVCN"
+#   dns_label      = "tfexamplevcn"
+# }
 
-resource "oci_core_subnet" "ExampleSubnet" {
-  cidr_block          = "10.1.20.0/24"
-  display_name        = "TFExampleSubnet"
-  dns_label           = "tfexamplesubnet"
-  compartment_id      = "${var.oci_compartment_ocid}"
-  vcn_id              = "${oci_core_virtual_network.ExampleVCN.id}"
-}
+# resource "oci_core_subnet" "ExampleSubnet" {
+#   cidr_block          = "10.1.20.0/24"
+#   display_name        = "TFExampleSubnet"
+#   dns_label           = "tfexamplesubnet"
+#   compartment_id      = "${var.oci_compartment_ocid}"
+#   vcn_id              = "${oci_core_virtual_network.ExampleVCN.id}"
+# }
 

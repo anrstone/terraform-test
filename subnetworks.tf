@@ -1,3 +1,9 @@
+resource "google_compute_subnetwork" "dev-subnet" {
+  ip_cidr_range = "10.0.1.0/24"
+  name = "devsubnet"
+  network = "${google_compute_network.our_development_network.name}"
+}
+
 resource "aws_subnet" "subnet1" {
   cidr_block = "${cidrsubnet(aws_vpc.environment-example-three.cidr_block, 3, 1)}"
   vpc_id = "${aws_vpc.environment-example-three.id}"
